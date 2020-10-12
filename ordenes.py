@@ -9,6 +9,8 @@ class Permiso(object):
     def __init__(self, type: str = ""):
         self.type = type
 
+#Clase Orden se encarga de probar que sean correctas las verificaciones, usuario y el permiso necesario
+
 class Orden:
     def __init__(self, ip: str = "", usuario: Usuario = None, permiso: Permiso = None):
         self.ip: str = ip
@@ -35,6 +37,9 @@ class Orden:
             print("Las verificaciones fallaron")
         else:
             self.__enviar()   
+
+
+#Creación de clases de verificaciones 
 
 class Verificacion:
     class Mensaje(metaclass=ABCMeta):
@@ -66,6 +71,7 @@ class RespuestaCache(Verificacion):
         print("Verificando la respuesta cache")
         return True
 
+#Clase creadora para los diferentes tipos de verificaciones
 
 class CreadorVerificaciones:
 
